@@ -12,7 +12,7 @@ git clone https://github.com/SrRecursive/Games.git
 ```
 Luego habrá que ir a la carpeta TicTacToe
 ```Bash
-cd TicTacToe
+cd Games/TicTacToe
 ```
 Obtener el ejecutable
 ```Bash
