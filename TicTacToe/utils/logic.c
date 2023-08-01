@@ -27,6 +27,35 @@ int	check_win(char **board, char symbol)
 	return (0);
 }
 
+int	board_full(char **board)
+{
+	int	index, index2, counter;
+
+	index = 0;
+	counter = 0;
+	while (index < ROWS)
+	{
+		index2 = 0;
+		while (index2 < COLS)
+		{
+			if (board[index][index2] == ' ')
+			{
+				counter++;
+			}
+			index2++;
+		}
+		index++;
+	}
+	if (counter == 0)
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
+}
+
 void	full_free(t_game *game, int index)
 {
 	while (index)

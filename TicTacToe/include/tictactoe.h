@@ -24,5 +24,6 @@ void	display_board(char **board);
 void	full_free(t_game *utils, int index);
 int		valid_move(int xpos, int ypos);
 int		check_win(char **board, char symbol);
+int		board_full(char **board);
 
 #endif

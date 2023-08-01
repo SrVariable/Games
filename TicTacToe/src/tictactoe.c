@@ -117,6 +117,11 @@ int	main(void)
 			}
 			game->end = 1;
 		}
+		else if (board_full(game->board) == 1)
+		{
+			write(1, "Empate\n", 7);
+			game->end = 1;
+		}
 	}
 	full_free(game, ROWS);
 	return (0);
