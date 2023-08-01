@@ -1,6 +1,8 @@
 # TicTacToe
 
-El juego TicTacToe (o 3 en raya) es un juego que consiste en que dos jugadores van marcando con 'x' o 'o' un tablero 3x3 de manera alternada. El juego termina cuando uno de los jugadores consigue hacer una línea de 3 símbolos iguales.
+El juego [TicTacToe](https://en.wikipedia.org/wiki/Tic-tac-toe) (o [3 en raya](https://es.wikipedia.org/wiki/Tres_en_l%C3%ADnea)) es un juego que consiste en que dos jugadores van marcando con 'x' o 'o' un tablero 3x3 de manera alternada. El juego termina cuando uno de los jugadores consigue hacer una línea recta de 3 símbolos iguales.
+
+![TicTacToe](https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Tic_tac_toe.svg/800px-Tic_tac_toe.svg.png)
 
 ## Uso
 
