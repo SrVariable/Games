@@ -48,7 +48,7 @@ UTILS_DIR = utils/
 
 # <- Files -> #
 SRC_FILES = tictactoe.c
-UTILS_FILES = utils.c
+UTILS_FILES = utils.c logic.c
 
 # <- Directories + Files -> # 
 SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))
@@ -80,13 +80,17 @@ clean:
 
 # <- Clean Execution + Library Destruction -> #
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) game
 	@echo "$(B_RED)$(T_WHITE)$(BOLD)Library destroyed successfully$(RESET)"
 
 # <- Fclean Execution + All Execution -> #
 re: fclean all
 
+run:
+	@gcc $(NAME) -o game
+	@./game	
+
 # <- Targets Declaration -> #
-.PHONY = all clean fclean re
+.PHONY = all clean fclean re run
 
 # ========================================================================== #

@@ -1,21 +1,22 @@
 #include "../include/tictactoe.h"
 
-char	**initialize_board(t_utils *utils)
+char	**initialize_board(t_game *game)
 {
 	int		index, index2;
 
 	index = 0;
-	utils->board = (char **)malloc(ROWS * sizeof(char *));
-	if (utils->board == NULL)
+	game->board = (char **)malloc(ROWS * sizeof(char *));
+	if (game->board == NULL)
 	{
+		full_free(game, index);
 		return (NULL);
 	}
 	while (index < ROWS)
 	{
-		utils->board[index] = (char *)malloc(COLS * sizeof(char));
-		if (utils->board[index] == NULL)
+		game->board[index] = (char *)malloc(COLS * sizeof(char));
+		if (game->board[index] == NULL)
 		{
-			full_free(utils, index);
+			full_free(game, index);
 			return (NULL);
 		}
 		index2 = 0;
@@ -23,38 +24,26 @@ char	**initialize_board(t_utils *utils)
 		{
 			if (index2 == COLS)
 			{
-				utils->board[index][index2] = '\0';
+				game->board[index][index2] = '\0';
 			}
 			else
 			{
-				utils->board[index][index2] = ' ';
+				game->board[index][index2] = ' ';
 			}
 			index2++;
 		}
 		index++;
 	}
-	utils->board[ROWS] = NULL;
-	return (utils->board);
+	game->board[index] = NULL;
+	return (game->board);
 }
 
 void	display_board(char **board)
 {
-	write (1, " ", 1); write(1, &board[0][0], 1); write(1, " | ", 3); write (1, &board[0][1], 1); write(1, " | ", 3); write(1, &board[0][2], 1); write(1, "\n", 1);
+	write (1, "\n ", 2); write(1, &board[0][0], 1); write(1, " | ", 3); write (1, &board[0][1], 1); write(1, " | ", 3); write(1, &board[0][2], 1); write(1, "\n", 1);
 	write (1, "---+---+---\n", 13);
-	write (1, " ", 1); write(1, &board[0][0], 1); write(1, " | ", 3); write (1, &board[1][1], 1); write(1, " | ", 3); write(1, &board[1][2], 1); write(1, "\n", 1);
+	write (1, " ", 1); write(1, &board[1][0], 1); write(1, " | ", 3); write (1, &board[1][1], 1); write(1, " | ", 3); write(1, &board[1][2], 1); write(1, "\n", 1);
 	write (1, "---+---+---\n", 13);
-	write (1, " ", 1); write(1, &board[0][0], 1); write(1, " | ", 3); write (1, &board[2][1], 1); write(1, " | ", 3); write(1, &board[2][2], 1); write(1, "\n", 1);
-	return ;
-}
-
-void	full_free(t_utils *utils, int index)
-{
-	while (index)
-	{
-		free(utils->board[index]);
-		index--;
-	}
-	free(utils->board);
-	free(utils);
+	write (1, " ", 1); write(1, &board[2][0], 1); write(1, " | ", 3); write (1, &board[2][1], 1); write(1, " | ", 3); write(1, &board[2][2], 1); write(1, "\n", 1);
 	return ;
 }
