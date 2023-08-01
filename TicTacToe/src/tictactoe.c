@@ -11,6 +11,7 @@ int	main(void)
 		return (0);
 	}
 	game->end = 0;
+	game->symbol[0] = ' ';
 	write(1, "Elige tu símbolo [x-o]: ", 26);
 	while (game->symbol[0] != 'x' && game->symbol[0] != 'o')
 	{

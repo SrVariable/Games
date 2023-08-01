@@ -34,16 +34,15 @@ char	**initialize_board(t_game *game)
 		}
 		index++;
 	}
-	game->board[index] = NULL;
 	return (game->board);
 }
 
 void	display_board(char **board)
 {
 	write (1, "\n ", 2); write(1, &board[0][0], 1); write(1, " | ", 3); write (1, &board[0][1], 1); write(1, " | ", 3); write(1, &board[0][2], 1); write(1, "\n", 1);
-	write (1, "---+---+---\n", 13);
+	write (1, "---+---+---\n", 12);
 	write (1, " ", 1); write(1, &board[1][0], 1); write(1, " | ", 3); write (1, &board[1][1], 1); write(1, " | ", 3); write(1, &board[1][2], 1); write(1, "\n", 1);
-	write (1, "---+---+---\n", 13);
+	write (1, "---+---+---\n", 12);
 	write (1, " ", 1); write(1, &board[2][0], 1); write(1, " | ", 3); write (1, &board[2][1], 1); write(1, " | ", 3); write(1, &board[2][2], 1); write(1, "\n", 1);
 	return ;
 }

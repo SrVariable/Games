@@ -58,10 +58,9 @@ int	board_full(char **board)
 
 void	full_free(t_game *game, int index)
 {
-	while (index)
+	while (index--)
 	{
 		free(game->board[index]);
-		index--;
 	}
 	if (game->board != NULL)
 	{
