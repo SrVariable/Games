@@ -5,7 +5,7 @@ char	**initialize_board(t_game *game)
 	int		index, index2;
 
 	index = 0;
-	game->board = (char **)malloc(ROWS * sizeof(char *));
+	game->board = (char **)malloc((ROWS + 1) * sizeof(char *));
 	if (game->board == NULL)
 	{
 		full_free(game, index);
@@ -13,7 +13,7 @@ char	**initialize_board(t_game *game)
 	}
 	while (index < ROWS)
 	{
-		game->board[index] = (char *)malloc(COLS * sizeof(char));
+		game->board[index] = (char *)malloc((COLS + 1) * sizeof(char));
 		if (game->board[index] == NULL)
 		{
 			full_free(game, index);
@@ -22,18 +22,13 @@ char	**initialize_board(t_game *game)
 		index2 = 0;
 		while (index2 < COLS)
 		{
-			if (index2 == COLS)
-			{
-				game->board[index][index2] = '\0';
-			}
-			else
-			{
-				game->board[index][index2] = ' ';
-			}
+			game->board[index][index2] = ' ';
 			index2++;
 		}
+		game->board[index][COLS] = '\0';
 		index++;
 	}
+	game->board[ROWS] = NULL;
 	return (game->board);
 }
 
