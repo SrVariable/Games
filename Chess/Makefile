@@ -34,7 +34,7 @@ RESET = \033[0m
 # ========================================================================== #
 
 # <- Library's Name -> #
-NAME = tictactoe
+NAME = chess 
 
 # <- Compilation Command -> #
 CC = gcc
@@ -47,8 +47,8 @@ SRC_DIR = src/
 UTILS_DIR = utils/
 
 # <- Files -> #
-SRC_FILES = tictactoe.c
-UTILS_FILES = utils.c logic.c
+SRC_FILES = chess.c
+UTILS_FILES = other.c piece.c board.c
 
 # <- Directories + Files -> # 
 SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))
